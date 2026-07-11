@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../assets/assets";
+// import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
+const url = "http://localhost:4000";
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+  const [food_list, setFoodList] = useState([]);
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -28,6 +30,24 @@ const StoreContextProvider = (props) => {
     }
     return totalAmount;
   };
+  const fetchFoodList = async () => {
+    try {
+      const response = await fetch(`${url}/api/food/list`);
+      const data = await response.json();
+      if (data.success) {
+        console.log("Live items from database:", data.data);
+        setFoodList(data.data);
+      } else {
+        console.error("Failed to load food list:", data.message);
+      }
+    } catch (error) {
+      console.error("Error fetching food list:", error);
+    }
+  };
+  // Run this function automatically when the app loads //
+  useEffect(() => {
+    fetchFoodList();
+  }, []);
 
   const contextValue = {
     food_list,
@@ -36,6 +56,7 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
+    url,
   };
 
   return <StoreContext.Provider value={contextValue}>{props.children}</StoreContext.Provider>;
