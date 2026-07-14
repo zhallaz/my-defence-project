@@ -1,9 +1,16 @@
 import React, { useContext } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../Context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
+  const navigate = useNavigate();
+  const onSubmitHandler = (event) => {
+    event.preventDevault();
+    // save user delivery details here //
+    navigate("/payment");
+  };
 
   return (
     <form className="place-order">
@@ -44,7 +51,7 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button>PROCEED TO PAYMENT</button>
+          <button onClick={() => navigate("/Payment")}>PROCEED TO PAYMENT</button>
         </div>
       </div>
     </form>

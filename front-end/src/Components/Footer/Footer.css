@@ -45,6 +45,11 @@
   background: grey;
   border: none;
 }
+.footer-logo {
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+}
 @media (max-width: 750px) {
   .footer-content {
     display: flex;

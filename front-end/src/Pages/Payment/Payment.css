@@ -1,0 +1,109 @@
+.payment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 50px;
+}
+
+.payment-container {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.payment-container h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.payment-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.payment-toggle {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border: 2px solid #e2e2e2;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.toggle-option.active {
+  border-color: tomato;
+  background-color: #fff7f5;
+  color: tomato;
+}
+
+.payment-form-container {
+  background: #fcfcfc;
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.payment-form-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline-color: tomato;
+}
+
+.payment-form-container .multi-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bank-details {
+  background-color: #fff;
+  border: 1px dashed tomato;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.bank-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.amount-to-pay {
+  margin: 20px 0;
+}
+
+.amount-to-pay span {
+  color: tomato;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  background: tomato;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
