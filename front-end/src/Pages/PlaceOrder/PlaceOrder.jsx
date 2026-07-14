@@ -7,7 +7,7 @@ const PlaceOrder = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
   const navigate = useNavigate();
   const onSubmitHandler = (event) => {
-    event.preventDevault();
+    event.preventDefault();
     // save user delivery details here //
     navigate("/payment");
   };
@@ -51,7 +51,9 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button onClick={() => navigate("/Payment")}>PROCEED TO PAYMENT</button>
+          <button type="button" onClick={() => navigate("/Payment")}>
+            PROCEED TO PAYMENT
+          </button>
         </div>
       </div>
     </form>
