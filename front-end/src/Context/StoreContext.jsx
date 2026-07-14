@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const StoreContext = createContext(null);
 
-const url = "http://localhost:4000";
+const url = "https://my-defence-back-end.onrender.com";
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFoodList] = useState([]);
